@@ -1,4 +1,4 @@
-// import express from 'express';
+const connectDB = require('./Config/database');
 const express = require('express');
 const app = express();
 const PORT = 3500;
@@ -10,3 +10,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
 	console.log(`Example app listening at http://localhost:${PORT}`);
 });
+
+connectDB();
