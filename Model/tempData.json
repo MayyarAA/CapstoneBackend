@@ -1,0 +1,9 @@
+{
+	"_id": "mongoDBGenerated",
+	"shopName": "BarberOne",
+	"Services": [
+		{ "ServiceOne": "Hair", "Time": "45MIN" },
+		{ "ServiceTwo": "HairBeard", "Time": "60MIN" }
+	],
+	"AvailableTimeSlotes": []
+}
