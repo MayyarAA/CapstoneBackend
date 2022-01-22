@@ -35,7 +35,7 @@ const GetCustomerService = async (userNameValue) => {
 			return userData;
 		})
 		.catch((error) => {
-			return null;
+			res.status(409).json(error);
 		});
 	return result;
 };

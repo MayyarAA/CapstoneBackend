@@ -4,6 +4,7 @@ import connectDB from './Config/database.js';
 import { bookRouter } from './Controller/demoendpoints/BookController.js';
 import { customerRouter } from './Controller/CustomerController.js';
 import { serviceProvidersRouter } from './Controller/ServiceProviderController.js';
+import { reservationsRouter } from './Controller/ReservationController.js';
 
 const app = express();
 const PORT = 5000;
@@ -22,6 +23,6 @@ connectDB();
 app.use('/books', bookRouter);
 app.use('/customers', customerRouter);
 app.use('/serviceproviders', serviceProvidersRouter);
+app.use('/reservations', reservationsRouter);
 
 // res.send('Hello World!' + result);
-//test get call to DB

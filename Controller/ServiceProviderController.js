@@ -29,8 +29,8 @@ router.route('/:storename').get(async (req, res) => {
 	return;
 });
 
-const GetServiceProviderService = async (userNameValue) => {
-	const result = await ServiceProvider.find({ StoreName: userNameValue })
+const GetServiceProviderService = async (storename) => {
+	const result = await ServiceProvider.find({ StoreName: storename })
 		.then((resultdata) => {
 			return resultdata;
 		})
