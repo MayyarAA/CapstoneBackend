@@ -5,5 +5,18 @@
 		{ "ServiceOne": "Hair", "Time": "45MIN" },
 		{ "ServiceTwo": "HairBeard", "Time": "60MIN" }
 	],
-	"AvailableTimeSlotes": []
+	"AvailableTimeSlotes": [
+		{
+			"Date": "01/01/2021",
+			"StartTime": "9amunix",
+			"EndTime": "10amunix",
+			"ServiceType": "ServiceTwo"
+		},
+		{
+			"Date": "01/01/2021",
+			"StartTime": "11amunix",
+			"EndTime": "12pmunix",
+			"ServiceType": "ServiceTwo"
+		}
+	]
 }
