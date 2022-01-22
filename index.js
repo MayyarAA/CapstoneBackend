@@ -1,8 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import connectDB from './Config/database.js';
-import { bookRouter } from './Controller/BookController.js';
-// const express = require('express');
+import { bookRouter } from './Controller/demoendpoints/BookController.js';
+import { customerRouter } from './Controller/CustomerController.js';
+import { serviceProvidersRouter } from './Controller/ServiceProviderController.js';
+
 const app = express();
 const PORT = 5000;
 app.use(bodyParser.json());
@@ -18,5 +20,8 @@ app.listen(PORT, () => {
 connectDB();
 
 app.use('/books', bookRouter);
+app.use('/customers', customerRouter);
+app.use('/serviceproviders', serviceProvidersRouter);
+
 // res.send('Hello World!' + result);
 //test get call to DB
