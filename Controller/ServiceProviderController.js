@@ -23,6 +23,19 @@ router.route('/').post(async (req, res) => {
 	}
 });
 
+router.route('/getStoreNames').get(async (req, res) => {
+	const queryResult = await GetAllServiceProvidersService();
+	if (queryResult === undefined || queryResult === null) {
+		console.log('error ');
+		res.status(400).json(`Error ${error}`);
+		return;
+	}
+	console.log(JSON.stringify(queryResult));
+	res.json(queryResult);
+});
+const GetAllServiceProvidersService = async () => {
+	return await ServiceProvider.find();
+};
 router.route('/:storename').get(async (req, res) => {
 	const storeNameValue = req.params.storename;
 	//ServiceProvider
