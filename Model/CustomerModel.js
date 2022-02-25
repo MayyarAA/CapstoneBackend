@@ -8,6 +8,7 @@ const customerSchema = new Schema(
 		LastName: { type: String, required: true },
 		Email: { type: String, required: true },
 		CustomerUserName: { type: String, required: true },
+		CustomerPassword: { type: String, required: true },
 	},
 	{ collection: 'Customer' }
 );
