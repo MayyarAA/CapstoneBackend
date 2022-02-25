@@ -1,12 +1,19 @@
 import express from 'express';
-import ServiceProvider from '../Model/ServiceProviderModel.js';
+import { ServiceProvider, Services } from '../Model/ServiceProviderModel.js';
 
 const router = express.Router();
 
 router.route('/').post(async (req, res) => {
 	console.log('req.body ' + req.body);
-	const { FirstName, LastName, Email, StoreName } = req.body;
-	const newServiceProvider = new ServiceProvider({ FirstName, LastName, Email, StoreName });
+	const { FirstName, LastName, Email, StoreName, Services } = req.body;
+	console.log('====>> ' + Services);
+	const newServiceProvider = new ServiceProvider({
+		FirstName,
+		LastName,
+		Email,
+		StoreName,
+		Services,
+	});
 
 	try {
 		await newServiceProvider.save();
