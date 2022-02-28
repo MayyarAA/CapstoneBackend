@@ -5,6 +5,7 @@ import { bookRouter } from './Controller/demoendpoints/BookController.js';
 import { customerRouter } from './Controller/CustomerController.js';
 import { serviceProvidersRouter } from './Controller/ServiceProviderController.js';
 import { reservationsRouter } from './Controller/ReservationController.js';
+import { serviceProviderAvailabilityRouter } from './Controller/ServiceProviderAvailabilityController.js';
 
 const app = express();
 const PORT = 5000;
@@ -24,5 +25,6 @@ app.use('/books', bookRouter);
 app.use('/customers', customerRouter);
 app.use('/serviceproviders', serviceProvidersRouter);
 app.use('/reservations', reservationsRouter);
+app.use('/availability', serviceProviderAvailabilityRouter);
 
 // res.send('Hello World!' + result);
