@@ -8,17 +8,17 @@ const serviceProviderAvailability = new Schema({
 	StartYear: { type: Number, required: true },
 	StartMonth: { type: Number, required: true },
 	StartDay: { type: Number, required: true },
-	StartDateTime: { type: Number, required: true },
-	EndDateTime: { type: Number, required: true },
+	StartDateTime: { type: Date, required: true },
+	EndDateTime: { type: Date, required: true },
 });
 
 serviceProviderAvailability.index(
-	{ ServcieProviderId: 1, StartYear: 1, StartMonth: 1, StartDay: 1, StartDateTime: 1 },
+	{ ServcieProviderId: 1, StartDateTime: 1 },
 	{ unique: true }
 );
 
-const ServiceProviderAvailability = mongoose.model(
-	'ServiceProviderAvailability',
+const ServiceProviderAvailabilityV2 = mongoose.model(
+	'ServiceProviderAvailabilityV2',
 	serviceProviderAvailability
 );
-export { ServiceProviderAvailability };
+export { ServiceProviderAvailabilityV2 };
